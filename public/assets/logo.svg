@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" width="160" height="40">
+  <defs>
+    <linearGradient id="hilGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff1744" />
+      <stop offset="100%" stop-color="#b71c1c" />
+    </linearGradient>
+  </defs>
+  <!-- Gamepad / Ball icon -->
+  <rect x="2" y="5" width="30" height="30" rx="8" fill="url(#hilGrad)" />
+  <path d="M11 20h12M17 14v12" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+  <circle cx="24" cy="15" r="1.5" fill="#ffffff" />
+  <circle cx="21" cy="25" r="1.5" fill="#ffffff" />
+  
+  <!-- Text Brand -->
+  <text x="40" y="26" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-weight="900" font-size="20" fill="#ffffff" letter-spacing="-0.5">
+    HIL<tspan fill="#ff2d46">GAMING</tspan>
+  </text>
+</svg>

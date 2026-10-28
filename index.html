@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>HilGaming - Android Football Mods (PES, FIFA, DFL & FTS)</title>
+  <meta name="description" content="HilGaming Mini App - Professional Android offline football mods catalog (PES, FIFA, DFL, FTS). Updated rosters, kits, and secure Monetag downloads.">
+  <meta name="theme-color" content="#0b0d11">
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="HilGaming - Android Football Mods">
+  <meta property="og:description" content="Professional Android offline football mods catalog (PES, FIFA, DFL, FTS).">
+  <meta property="og:type" content="website">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Telegram Web Apps SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- Telegram WebApp CloudStorage Safe Polyfill for clients/browsers < 6.9 -->
+  <script>
+    (function() {
+      try {
+        if (typeof window !== 'undefined' && window.Telegram && window.Telegram.WebApp) {
+          var tg = window.Telegram.WebApp;
+          var isNativeSupported = false;
+          try {
+            isNativeSupported = typeof tg.isVersionAtLeast === 'function' && tg.isVersionAtLeast('6.9');
+          } catch(e) {}
+
+          if (!isNativeSupported) {
+            var prefix = 'tg_cs_';
+            var polyfill = {
+              setItem: function(key, value, callback) {
+                try {
+                  localStorage.setItem(prefix + key, String(value));
+                  if (typeof callback === 'function') setTimeout(function() { callback(null, true); }, 0);
+                } catch(err) {
+                  if (typeof callback === 'function') setTimeout(function() { callback(err, false); }, 0);
+                }
+                return polyfill;
+              },
+              getItem: function(key, callback) {
+                try {
+                  var v = localStorage.getItem(prefix + key);
+                  if (typeof callback === 'function') setTimeout(function() { callback(null, v !== null ? v : ''); }, 0);
+                } catch(err) {
+                  if (typeof callback === 'function') setTimeout(function() { callback(err, null); }, 0);
+                }
+                return polyfill;
+              },
+              getItems: function(keys, callback) {
+                try {
+                  var res = {};
+                  (keys || []).forEach(function(k) {
+                    var v = localStorage.getItem(prefix + k);
+                    if (v !== null) res[k] = v;
+                  });
+                  if (typeof callback === 'function') setTimeout(function() { callback(null, res); }, 0);
+                } catch(err) {
+                  if (typeof callback === 'function') setTimeout(function() { callback(err, {}); }, 0);
+                }
+                return polyfill;
+              },
+              removeItem: function(key, callback) {
+                try {
+                  localStorage.removeItem(prefix + key);
+                  if (typeof callback === 'function') setTimeout(function() { callback(null, true); }, 0);
+                } catch(err) {
+                  if (typeof callback === 'function') setTimeout(function() { callback(err, false); }, 0);
+                }
+                return polyfill;
+              },
+              removeItems: function(keys, callback) {
+                try {
+                  (keys || []).forEach(function(k) { localStorage.removeItem(prefix + k); });
+                  if (typeof callback === 'function') setTimeout(function() { callback(null, true); }, 0);
+                } catch(err) {
+                  if (typeof callback === 'function') setTimeout(function() { callback(err, false); }, 0);
+                }
+                return polyfill;
+              },
+              getKeys: function(callback) {
+                try {
+                  var keys = [];
+                  for (var i = 0; i < localStorage.length; i++) {
+                    var k = localStorage.key(i);
+                    if (k && k.indexOf(prefix) === 0) {
+                      keys.push(k.substring(prefix.length));
+                    }
+                  }
+                  if (typeof callback === 'function') setTimeout(function() { callback(null, keys); }, 0);
+                } catch(err) {
+                  if (typeof callback === 'function') setTimeout(function() { callback(err, []); }, 0);
+                }
+                return polyfill;
+              }
+            };
+            tg.CloudStorage = polyfill;
+          }
+        }
+      } catch(e) {
+        console.warn('Telegram CloudStorage polyfill error:', e);
+      }
+    })();
+  </script>
+
+  <!-- Monetag SDK (Zone: 9590572) - Loaded exactly once in head -->
+  <script src="//libtl.com/sdk.js" data-zone="9590572" data-sdk="show_9590572"></script>
+</head>
+<body>
+
+  <!-- Offline Warning Banner -->
+  <div id="offlineBanner" class="offline-banner" data-i18n="offline_banner">
+    Offline Mode — Displaying cached local catalog.
+  </div>
+
+  <div class="app-container">
+    <!-- Sticky Top Bar -->
+    <header class="top-nav">
+      <div class="brand-slot" id="brandLogoHomeBtn" onclick="window.HilAppInstance?.navigate('home')">
+        <img src="/assets/logo.svg" alt="HilGaming Logo" class="brand-logo-img">
+      </div>
+      <div class="top-actions">
+        <!-- Language Switcher Button -->
+        <button class="lang-select-btn" id="openLanguageModalBtn" title="Select Language" data-i18n-title="language_select_title">
+          <span class="lang-flag" id="topBarLangFlag">🇬🇧</span>
+          <span id="topBarLangCode">EN</span>
+          <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; color: var(--text-muted); margin-left: 2px;"></i>
+        </button>
+
+        <!-- Refresh Catalog Button -->
+        <button class="icon-btn" id="refreshCatalogBtn" title="Refresh Catalog" data-i18n-title="refresh_tooltip">
+          <i class="fa-solid fa-rotate"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Views Container -->
+    <main class="main-content">
+      
+      <!-- VIEW 1: HOME -->
+      <section id="view-home" class="view-section active">
+        <!-- Search Input -->
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon-left"></i>
+          <input type="text" 
+                 id="searchInput" 
+                 class="search-input-box" 
+                 placeholder="Search by title, ID or game (e.g. PES, FIFA, DFL)..." 
+                 data-i18n-placeholder="search_placeholder"
+                 autocomplete="off">
+          <button class="search-clear-btn" id="searchClearBtn" title="Clear search" data-i18n-title="search_clear">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Featured Spotlight -->
+        <div id="featuredModSlot"></div>
+
+        <!-- Quick Categories Strip -->
+        <div class="section-header">
+          <h3 class="section-title">
+            <i class="fa-solid fa-layer-group"></i> <span data-i18n="quick_categories">Quick Categories</span>
+          </h3>
+          <button class="view-all-link" onclick="window.HilAppInstance?.navigate('categories')" data-i18n="view_all">
+            View All
+          </button>
+        </div>
+        <div class="filter-scroll-strip" id="filterStrip">
+          <button class="filter-chip active" data-category="all">
+            <i class="fa-solid fa-border-all"></i> <span data-i18n="cat_all">All Mods</span>
+          </button>
+          <button class="filter-chip" data-category="PES & eFootball">
+            <i class="fa-solid fa-futbol"></i> <span data-i18n="cat_pes">PES & eFootball</span>
+          </button>
+          <button class="filter-chip" data-category="EA Sports FC & FIFA">
+            <i class="fa-solid fa-trophy"></i> <span data-i18n="cat_fifa">EA FC & FIFA</span>
+          </button>
+          <button class="filter-chip" data-category="DFL">
+            <i class="fa-solid fa-star"></i> <span data-i18n="cat_dfl">DFL (RoberFL)</span>
+          </button>
+          <button class="filter-chip" data-category="FTS">
+            <i class="fa-solid fa-bolt"></i> <span data-i18n="cat_fts">FTS Mobile</span>
+          </button>
+        </div>
+
+        <!-- Recent Releases Grid -->
+        <div class="section-header">
+          <h3 class="section-title">
+            <i class="fa-solid fa-clock-rotate-left"></i> <span data-i18n="recent_releases">Recent Releases</span>
+          </h3>
+          <button class="view-all-link" onclick="window.HilAppInstance?.navigate('games')">
+            <span data-i18n="view_all">View All</span> (24)
+          </button>
+        </div>
+        <div class="mods-grid" id="recentModsGrid"></div>
+      </section>
+
+      <!-- VIEW 2: GAMES (Full Catalog) -->
+      <section id="view-games" class="view-section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fa-solid fa-gamepad"></i> <span data-i18n="all_mods_title">All Mods</span>
+          </h2>
+          <div>
+            <select id="sortSelect" class="icon-btn" style="width: auto; padding: 0 10px; font-size: 0.82rem; font-weight: 600; color: #fff; background: var(--bg-surface);">
+              <option value="recent" data-i18n="sort_recent">Most Recent</option>
+              <option value="az" data-i18n="sort_az">Name A-Z</option>
+              <option value="za" data-i18n="sort_za">Name Z-A</option>
+              <option value="downloads" data-i18n="sort_downloads">Most Files</option>
+            </select>
+          </div>
+        </div>
+        <div class="mods-grid" id="gamesModsGrid"></div>
+      </section>
+
+      <!-- VIEW 3: CATEGORIES -->
+      <section id="view-categories" class="view-section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fa-solid fa-folder-tree"></i> <span data-i18n="categories_title">Football Mod Categories</span>
+          </h2>
+        </div>
+        <div class="category-cards-grid" id="categoriesGridList"></div>
+      </section>
+
+      <!-- VIEW 4: FAVORITES -->
+      <section id="view-favorites" class="view-section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <i class="fa-solid fa-heart" style="color: #ff2d46;"></i> <span data-i18n="nav_favorites">Favorites</span>
+          </h2>
+        </div>
+        <div id="favoritesEmptyState" class="empty-state">
+          <div class="empty-state-icon"><i class="fa-regular fa-heart"></i></div>
+          <h3 class="empty-state-title" data-i18n="favorites_empty_title">No saved favorites</h3>
+          <p class="empty-state-desc" data-i18n="favorites_empty_desc">Tap the heart icon on any game page to save it here on your device.</p>
+        </div>
+        <div class="mods-grid" id="favoritesModsGrid"></div>
+      </section>
+
+      <!-- VIEW 5: ABOUT & SETTINGS -->
+      <section id="view-about" class="view-section">
+        <div class="about-hero">
+          <img src="/assets/logo.svg" alt="HilGaming" class="about-logo">
+          <h2 class="about-title" data-i18n="about_app_title">HilGaming Mini App</h2>
+          <p class="about-desc" data-i18n="about_app_desc">
+            Your ultimate hub for Android offline football mods: eFootball PES, EA Sports FC / FIFA, DFL, and FTS. Daily updates with fresh rosters, kits, stadiums, and career modes.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 10px; margin-top: 14px;">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn-primary-action" style="max-width: 180px; text-decoration: none;">
+              <i class="fa-brands fa-youtube"></i> <span data-i18n="official_channel">Official Channel</span>
+            </a>
+            <button class="btn-secondary-action" id="aboutChangeLanguageBtn" style="max-width: 160px;">
+              <i class="fa-solid fa-globe"></i> <span data-i18n="language_select_title">Language</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- VIP Supporter Card (Format C - Rewarded Popup) -->
+        <div class="vip-supporter-box" id="vipSupporterCard">
+          <div class="vip-title">
+            <i class="fa-solid fa-star"></i> <span data-i18n="vip_support_title">Support HilGaming</span>
+          </div>
+          <p class="vip-desc" data-i18n="vip_support_desc">
+            Enjoying our free catalog? Watch a quick Popup ad to support the creators and unlock the exclusive VIP Supporter badge on this device!
+          </p>
+          <button class="btn-primary-action" id="watchPopupAdBtn" style="background: linear-gradient(135deg, #ff9800 0%, #e65100 100%);">
+            <i class="fa-solid fa-heart"></i> <span data-i18n="vip_support_btn">Support with Popup Ad</span>
+          </button>
+        </div>
+
+        <!-- ZArchiver Installation Tutorial -->
+        <div class="detail-card-box">
+          <h3 class="detail-card-title">
+            <i class="fa-solid fa-wrench"></i> <span data-i18n="guide_title">Basic Android Installation Guide</span>
+          </h3>
+          <div class="about-guide-list">
+            <div class="guide-step">
+              <span class="step-number">1</span>
+              <div data-i18n="guide_step_1">
+                Download required files: APK, OBB and DATA (if any) using our secure links.
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-number">2</span>
+              <div data-i18n="guide_step_2">
+                Install ZArchiver: Free file manager on Google Play to extract .zip and .rar archives.
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-number">3</span>
+              <div data-i18n="guide_step_3">
+                Extract game data: Move the OBB folder to Android/obb/ and DATA to Android/data/.
+              </div>
+            </div>
+            <div class="guide-step">
+              <span class="step-number">4</span>
+              <div data-i18n="guide_step_4">
+                Install and Launch APK: Grant necessary storage permissions and enjoy offline football!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monetization & Integrity Transparency -->
+        <div class="detail-card-box" style="font-size: 0.8rem; color: var(--text-muted);">
+          <h4 style="color: var(--text-secondary); margin-bottom: 6px;">
+            <i class="fa-solid fa-shield-halved"></i> <span data-i18n="transparency_title">Monetag Integrity & Ad Transparency</span>
+          </h4>
+          <p data-i18n="transparency_desc">
+            To keep all mods, high-speed servers, and links 100% free for Telegram users, HilGaming uses certified Monetag ads. All downloads point to verified community modders and original file hosts.
+          </p>
+        </div>
+      </section>
+
+      <!-- VIEW 6: DETAILS -->
+      <section id="view-details" class="view-section">
+        <div id="detailsContentContainer"></div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar (Thumb Zone) -->
+    <nav class="bottom-nav">
+      <button class="nav-tab-item active" data-view="home">
+        <i class="fa-solid fa-house"></i>
+        <span data-i18n="nav_home">Home</span>
+      </button>
+      <button class="nav-tab-item" data-view="games">
+        <i class="fa-solid fa-gamepad"></i>
+        <span data-i18n="nav_games">Games</span>
+      </button>
+      <button class="nav-tab-item" data-view="categories">
+        <i class="fa-solid fa-layer-group"></i>
+        <span data-i18n="nav_categories">Categories</span>
+      </button>
+      <button class="nav-tab-item" data-view="favorites">
+        <i class="fa-solid fa-heart"></i>
+        <span data-i18n="nav_favorites">Favorites</span>
+      </button>
+      <button class="nav-tab-item" data-view="about">
+        <i class="fa-solid fa-circle-info"></i>
+        <span data-i18n="nav_about">About</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ==========================================================================
+       MODALS & OVERLAYS
+       ========================================================================== -->
+
+  <!-- Language Selection Modal (Shown on first launch or via switcher button) -->
+  <div class="modal-backdrop" id="languageSelectModal">
+    <div class="modal-box" style="max-width: 480px;">
+      <div class="modal-icon-badge" style="background: rgba(229, 9, 20, 0.12); color: var(--accent-red);">
+        <i class="fa-solid fa-globe"></i>
+      </div>
+      <h3 class="modal-title" data-i18n="lang_modal_title">Select Language</h3>
+      <p class="modal-desc" data-i18n="lang_modal_subtitle">
+        Choose your preferred language for the HilGaming Mini App
+      </p>
+
+      <div class="lang-modal-grid" id="langOptionsGrid">
+        <!-- Generated by i18n logic -->
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-primary-action" id="confirmLanguageModalBtn" data-i18n="lang_modal_confirm">
+          Confirm & Continue
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Format B: Rewarded Interstitial Confirmation Modal -->
+  <div class="modal-backdrop" id="downloadRewardModal">
+    <div class="modal-box">
+      <div class="modal-icon-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <h3 class="modal-title" data-i18n="modal_dl_title">Protected Download</h3>
+      <p class="modal-desc" id="downloadModalStatusText" data-i18n="modal_dl_desc">
+        To unlock this direct link and support HilGaming servers, please watch the short ad until completion.
+      </p>
+      <div class="modal-target-file">
+        <div id="downloadTargetLabel" style="color: #ffffff; margin-bottom: 4px;">File Selected</div>
+        <div id="downloadHostLabel" style="color: var(--text-muted); font-size: 0.72rem;">Secure Server</div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-primary-action" id="startRewardedAdBtn">
+          <i class="fa-solid fa-play"></i> <span data-i18n="modal_dl_start">Watch Ad & Download</span>
+        </button>
+        <button class="btn-secondary-action" id="cancelDownloadModalBtn" data-i18n="modal_dl_cancel">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Format C: VIP Supporter Celebration Modal -->
+  <div class="modal-backdrop" id="supporterSuccessModal">
+    <div class="modal-box">
+      <div class="modal-icon-badge badge-vip">
+        <i class="fa-solid fa-crown"></i>
+      </div>
+      <h3 class="modal-title" data-i18n="vip_congrats_title">Thank You for Supporting!</h3>
+      <p class="modal-desc" data-i18n="vip_congrats_desc">
+        You successfully watched the support Popup ad. Your VIP Supporter badge is now active!
+      </p>
+      <button class="btn-primary-action" id="closeSupporterModalBtn" data-i18n="continue_browsing">
+        Continue Browsing
+      </button>
+    </div>
+  </div>
+
+  <!-- Image Lightbox Modal -->
+  <div class="lightbox-container" id="imageLightbox">
+    <button class="lightbox-close-btn" id="closeLightboxBtn" title="Close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img src="" alt="Screenshot" class="lightbox-img" id="lightboxActiveImg">
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notice" id="appToastNotice"></div>
+
+  <!-- Core App Entry Script -->
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

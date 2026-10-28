@@ -1,0 +1,6 @@
+{
+  "name": "HilGaming Mini App",
+  "description": "HilGaming Telegram Mini App - Catálogo profissional de mods de futebol para Android (PES, FIFA, DFL, FTS), vídeos, tutoriais e downloads seguros com Monetag.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
