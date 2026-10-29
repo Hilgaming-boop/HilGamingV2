@@ -1,5 +1,35 @@
 [ 
     {
+    "title": "PES 2017 Android Native Port – Play the Classic PC/Console Game on Mobile",
+    "tag":"Hot",
+    "description": "Experience the legendary PES 2017 PC/Console game natively on your Android device! Enjoy authentic gameplay, controller support, and full mobile optimization.",
+    "features": [
+      "PC/Console Native Port",
+      "Controller Support Enabled",
+      "Authentic PES 2017 Gameplay",
+      "Optimized for Android"
+    ],
+    "images": [
+      "https://i.postimg.cc/qqWK0bBK/20261029-123127.jpg",
+      "https://i.postimg.cc/QCv7s4NQ/Screenshot-2026-10-29-12-01-15-623-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/SRH9qTQ8/Screenshot-2026-10-29-14-15-10-040-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/L5GPRC4j/Screenshot-2026-10-29-14-16-05-896-com-miui-mediaviewer.jpg"
+    ],
+    "video": "https://youtu.be/HG8VvwU6FJY",
+    "instructions": "1. Prepare your files: Ensure you have the two necessary installation files ready on your device.\n2. Run the installer: Locate and open the game's APK file using your device's file manager.\n3. Authorize and Configure: Open the game and grant permissions. When prompted with three configuration options, select the third option and navigate to the folder where you placed the game data (e.g., a folder named 'pes 17' inside your Download directory).\n4. Troubleshooting: If you see an error message, close the app completely, reopen it, and tap 'install' again to complete the process.\n5. Completion: Wait for the installation to reach 100%, then launch the game to begin your configuration.\n\n🎮 CONTROLLER SUPPORT:\nThe game supports Bluetooth controllers. Connect your controller in your device settings, and the game will recognize it automatically without requiring additional mapping.",
+    "downloads": [
+      { 
+        "label": "📱 DOWNLOAD APK (PES 2017 Recomp)", 
+        "url": "https://www.mediafire.com/file/4nmq9pcl5k44255/pes2017-recomp-0.1.1.apk/file" 
+      },
+      { 
+        "label": "📁 DOWNLOAD OBB / DATA (Mustafa Gamers)", 
+        "url": "https://www.mediafire.com/file/mwrb33cdew73eax/PES_2017_BY_MUSTAFA_GAMERS.zip/file" 
+      }
+    ]
+  }
+,
+    {
     "title": "FIFA 16 Mobile Mod FC 27 – PS5 Style Theme, HD Graphics & 2026-27 Kits",
     "tag": "FC 27 PS5",
     "description": "Download FIFA 16 Mobile Mod FC 27 featuring a PS5 style theme, high-definition graphics, updated 2026-27 kits, and separate theme/full data options!",
