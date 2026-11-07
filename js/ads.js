@@ -55,7 +55,7 @@ export const HilAds = {
       window.show_9590572({
         type: 'inApp',
         inAppSettings: {
-          frequency: 2,
+          frequency: 5,
           capping: 0.1,
           interval: 30,
           timeout: 5,
