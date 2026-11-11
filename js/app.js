@@ -887,7 +887,7 @@ class HilApp {
 
     try {
       // 1. Invoke central Monetag Rewarded Interstitial Promise
-      await HilAds.showRewardedPopup();
+      await HilAds.showRewardedInterstitial();
 
       // 2. SUCCESS: Ad completed / validated!
       HilTelegram.haptic('success');
