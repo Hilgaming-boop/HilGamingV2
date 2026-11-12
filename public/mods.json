@@ -1,4 +1,31 @@
 [ 
+    {
+    "title": "EFootball 27 Mobile – New Champions League, World Cup & EURO",
+    "tag": "EFOOTBALL 27",
+    "description": "Download EFootball 27 Mobile featuring the new Champions League, World Cup, and EURO tournaments, updated graphics, and immersive offline mobile gameplay.",
+    "features": [
+      "New Champions League Mode",
+      "World Cup & EURO Tournaments",
+      "Updated Kits & Rosters",
+      "Optimized Mobile Gameplay"
+    ],
+    "images": [
+      "https://i.postimg.cc/J7SJjZSz/1794494378393.jpg",
+      "https://i.postimg.cc/CM9Dbk9j/Screenshot-2026-11-12-16-13-06-288-com-efootxi-game.jpg",
+      "https://i.postimg.cc/7Y7z9bk4/Screenshot-2026-11-12-16-13-55-680-com-efootxi-game.jpg",
+      "https://i.postimg.cc/44YVKB2k/Screenshot-2026-11-12-16-14-10-234-com-efootxi-game.jpg",
+      "https://i.postimg.cc/rFW4jzkX/Screenshot-2026-11-12-16-15-19-734-com-efootxi-game.jpg"
+    ],
+    "video": "https://youtu.be/4t4e-Xyd4TU",
+    "instructions": "1. Download the file package from the link below.\n2. Extract the archive using a file manager like ZArchiver.\n3. Move the required data/obb folders to their proper Android directories and install the APK.\n4. Launch the game and enjoy the new tournaments!",
+    "downloads": [
+      { 
+        "label": "📥 DOWNLOAD PACKAGE (GoFile)", 
+        "url": "https://gofile.io/d/kV14TPe0" 
+      }
+    ]
+  }
+,
      {
     "title": "PES 2019 Mobile Offline – Big Update: UEFA Champions League, My League & Licensed Kits | ID-0029",
     "tag": "PES 19 UCL",
