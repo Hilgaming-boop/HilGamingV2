@@ -1,4 +1,42 @@
 [ 
+    {
+    "title": "eFootball v29 – Master League Improved: New Features & Gameplay",
+    "tag": "EFOOTBALL V29",
+    "description": "Download eFootball v29 featuring major improvements to Master League, brand new features, enhanced gameplay, and streamlined resource installation for Android.",
+    "features": [
+      "Improved Master League Mode",
+      "New Gameplay Enhancements",
+      "Optimized Resource Loading",
+      "Full Offline Android Support"
+    ],
+    "images": [
+      "https://i.postimg.cc/FRkpCcLP/1794818813569.jpg",
+      "https://i.postimg.cc/GtkQdCzx/Screenshot-2026-11-16-10-36-38-670-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/qqfLPRc4/Screenshot-2026-11-16-10-59-37-021-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/cJrB6YXZ/Screenshot-2026-11-16-10-59-59-730-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/6p60JFZF/Screenshot-2026-11-16-11-00-09-696-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/5NS3rfXC/Screenshot-2026-11-16-11-00-19-738-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/cLDcsT7k/Screenshot-2026-11-16-11-00-37-006-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/xT3RZ9X9/Screenshot-2026-11-16-11-01-02-753-com-miui-mediaviewer.jpg"
+    ],
+    "video": "",
+    "instructions": "1. Install both the APK and Resources packages.\n2. Open the main game APK after installation and click 'Enter the Game' to start loading resources.\n3. TROUBLESHOOTING:\n   - If it gets stuck, open the resources package/APK and return to the game.\n   - If it shows a black screen, close the game completely and reopen it.",
+    "downloads": [
+      { 
+        "label": "📱 DOWNLOAD APK (GoFile - Option 1)", 
+        "url": "https://gofile.io/d/v2KoH7ac" 
+      },
+      { 
+        "label": "📱 DOWNLOAD APK (GoFile - Option 2)", 
+        "url": "https://gofile.io/d/F2GK71Tk" 
+      },
+      { 
+        "label": "📦 DOWNLOAD RESOURCES (GoFile)", 
+        "url": "https://gofile.io/d/7vuokbd0" 
+      }
+    ]
+  }
+,
   {
     "title": "EFootball 27 Mobile – New Champions League, World Cup & EURO",
     "tag": "EFOOTBALL 27",
