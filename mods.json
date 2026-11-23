@@ -1,5 +1,36 @@
 [
     {
+    "title": "DLS 25 Mobile Offline – 2026 Revival (Infinity Coins & Normal APK)",
+    "tag": "DLS 25 OFFLINE",
+    "description": "DLS 25 Mobile Offline is back in 2026! Choose between the 100M/Infinity Coins APK or Normal APK across ARM64 and ARMV7 support for Android.",
+    "features": [
+      "Offline Gameplay in 2026",
+      "Infinity Coins (100M) & Normal APK Options",
+      "ARM64 & ARMV7 Compatibility",
+      "Classic DLS 25 Mobile Experience"
+    ],
+    "images": [
+      "https://i.postimg.cc/cCxW1ZTf/1795437100290.jpg",
+      "https://i.postimg.cc/QC8DNsSb/Screenshot-2026-11-23-13-55-48-289-com-firsttouchgames-dr25.jpg",
+      "https://i.postimg.cc/PJXHfhKR/Screenshot-2026-11-23-14-26-44-129-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/yxLHk5rj/Screenshot-2026-11-23-14-27-11-367-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/yx1K6Bn5/Screenshot-2026-11-23-14-27-30-442-com-miui-mediaviewer.jpg"
+    ],
+    "video": "",
+    "instructions": "1. Download your preferred APK zip package (Infinity Coins or Normal) from the links below.\n2. Extract the archive using a file manager (such as ZArchiver) and locate the APK matching your device architecture (ARM64 or ARMV7).\n3. Install the APK on your Android device (enable installation from unknown sources if prompted).\n4. Launch the game and enjoy DLS 25 offline!",
+    "downloads": [
+      { 
+        "label": "💰 DOWNLOAD APK INFINITY COINS (MediaFire)", 
+        "url": "https://www.mediafire.com/file_premium/vtc75lrz3q78f9q/DLS25_100M_ARM64_ARMV7_V1.zip/file" 
+      },
+      { 
+        "label": "📱 DOWNLOAD APK NORMAL (MediaFire)", 
+        "url": "https://www.mediafire.com/file_premium/937mtabld8708sc/DLS25_NORMAL_ARM64_ARMV7_V1.zip/file" 
+      }
+    ]
+  }
+,
+    {
     "title": "DLS 23 Mobile – Offline Gameplay Revival",
     "tag": "DLS 23 OFFLINE",
     "description": "Dream League Soccer 23 Mobile is back with offline gameplay support! Download the APK for a straightforward installation and enjoy classic DLS 23 action on Android.",
