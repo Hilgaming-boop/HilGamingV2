@@ -1,5 +1,37 @@
 [ 
     {
+    "title": "PES 2018 Mobile Offline – Lemure FUT Mega Patch V1 APK for Android",
+    "tag": "PES 2018 FUT",
+    "description": "Download PES 2018 Mobile Offline featuring the Lemure FUT Mega Patch V1 Ultimate Edition, updated squads, custom FUT-inspired visuals, and full offline gameplay on Android.",
+    "features": [
+      "Lemure FUT Mega Patch V1",
+      "Ultimate Edition Visuals & UI",
+      "Full Offline Android Gameplay",
+      "Updated Squads & Content"
+    ],
+    "images": [
+      "https://i.postimg.cc/Kzx1mTgr/1795686896081.jpg",
+      "https://i.postimg.cc/jq8DrLqf/Screenshot-2026-11-26-11-23-57-449-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/DfCSK8fL/Screenshot-2026-11-26-11-24-06-813-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/SsdJRK6h/Screenshot-2026-11-26-11-24-34-815-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/vBhcTmrR/Screenshot-2026-11-26-11-24-44-133-com-miui-mediaviewer.jpg",
+      "https://i.postimg.cc/G2KHtpF1/Screenshot-2026-11-26-11-24-49-335-com-miui-mediaviewer.jpg"
+    ],
+    "video": "https://youtu.be/JUf8XtyV438",
+    "instructions": "1. Download both the APK and OBB files from the links below.\n2. Extract the OBB archive using a file manager (such as ZArchiver) and move the 'com.lemureytpes2018' folder to Android/obb/.\n3. Install the APK file on your Android device (enable installation from unknown sources if prompted).\n4. Launch the game and enjoy PES 2018 Lemure FUT Mega Patch V1 offline!",
+    "downloads": [
+      { 
+        "label": "📱 DOWNLOAD APK FILE (Lemure FUT Ultimate Edition)", 
+        "url": "https://www.mediafire.com/file/savvlqpvdj0jx8o/PES_2018_LEMURE_FUT_ULTIMATE_EDITION.apk/file" 
+      },
+      { 
+        "label": "📁 DOWNLOAD OBB FILE (com.lemureytpes2018)", 
+        "url": "https://www.mediafire.com/file/syxwine545nst98/com.lemureytpes2018.zip/file" 
+      }
+    ]
+  }
+,
+    {
     "title": "DLS 25 Mobile Offline – 2026 Revival (Infinity Coins & Normal APK)",
     "tag": "DLS 25 OFFLINE",
     "description": "DLS 25 Mobile Offline is back in 2026! Choose between the 100M/Infinity Coins APK or Normal APK across ARM64 and ARMV7 support for Android.",
